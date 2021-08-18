@@ -1,5 +1,5 @@
 import React, { useState, useReducer } from "react";
-import "./../styles/App.css";
+// import "./../styles/App.css";
 import Select from "./select";
 import Description from './describe';
 const states = [
@@ -226,31 +226,16 @@ function App() {
   const [selectedLandmark, setSelectedLandmark] = useState(0);
   // let statesList=states.map((val)=>val.name);
   let handleStateChange = (val) => {
-    let idx;
-    states.forEach((ele,i)=>{
-      if(ele.name===val)
-        idx=i;
-    })
-    // console.log(val);
-    setSelectedState(idx);
+    console.log(val);
+    setSelectedState(val);
   };
   let handleCityChange = (val) => {
-    let idx;
-    states[selectedState].city.forEach((ele,i)=>{
-      if(ele.name===val)
-        idx=i;
-    })
     // console.log(val);
-    setSelectedCity(idx);
+    setSelectedCity(val);
   };
   let handleLandmarkChange = (val) => {
-    let idx;
-    states[selectedState].city[selectedCity].landmarks.forEach((ele,i)=>{
-      if(ele.name===val)
-        idx=i;
-    })
     // console.log(val);
-    setSelectedLandmark(idx);
+    setSelectedLandmark(val);
   };
   // Do not alter/remove main div
   return (
